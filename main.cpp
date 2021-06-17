@@ -1,3 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int power(int base , int power);
+
+int digitLen(int a);
+
+bool isNarcissistic(const int &value);
+
+int main(){
+
+  int num;
+  cout << "Please Enter Number To Check: ";
+  cin >> num;
+
+  if(isNarcissistic(num))
+    cout << "True!" << endl;
+  else
+    cout << "False!" << endl;
+  return 0;
+}
+
 int power(int base , int power){
     int result = base;
     for(int i=1; i<power; i++){
@@ -19,9 +41,9 @@ int digitLen(int a){
     return len;
 }
 
-bool narcissistic( int value ){
+bool isNarcissistic(const int &value){
   int len = digitLen(value);
-    int pow =0;
+    int pow = 0;
     int res = value;
 
     while(res){
@@ -30,10 +52,4 @@ bool narcissistic( int value ){
     }
 
     return (pow == value);
-}
-
-int main(){
-
-  narcissistic(153);
-  return 0;
 }
